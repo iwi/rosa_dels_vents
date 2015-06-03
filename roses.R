@@ -93,7 +93,7 @@ wind.rose.5 <- function(dades) {
                    colour = "white") +
     coord_polar(start = 0) +
 #    scale_fill_brewer("", palette = "Set1") +
-    scale_fill_manual("", values = c("orange", "darkblue")) +
+    scale_fill_manual("", values = c("orange", "black")) +
     theme_minimal() +
     ggtitle("Events by Time of day") +
     scale_y_continuous(name = "Count",
