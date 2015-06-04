@@ -85,7 +85,7 @@ wind.rose.4 <- function(dades, fill_colour) {
   plot
 }
 
-wind.rose.5 <- function(dades) {
+wind.rose.5 <- function(dades, day_colour, night_colour) {
   dades %>%
     ggplot(aes(x = x, fill = sleep_time)) +
     geom_histogram(breaks = seq(0, 24),
@@ -93,7 +93,7 @@ wind.rose.5 <- function(dades) {
                    colour = "white") +
     coord_polar(start = 0) +
 #    scale_fill_brewer("", palette = "Set1") +
-    scale_fill_manual("", values = c("orange", "black")) +
+    scale_fill_manual("", values = c(day_colour, night_colour)) +
     theme_minimal() +
     ggtitle("Events by Time of day") +
     scale_y_continuous(name = "Count",
@@ -108,7 +108,9 @@ wind.rose.5 <- function(dades) {
   plot
 }
 
-wind.rose.5(df_temps)
+wind.rose.5(dades = df_temps,
+            day_colour = "orange",
+            night_colour = "#9999CC")
 
 
 ## generate data
